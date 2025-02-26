@@ -27,23 +27,32 @@
         last_name: 'wolf',
         age: 60
       },
-    {
-      first_name: 'stefan',
-      last_name: 'leigniger',
-      age: 60
-    }
-  ],
-  sportsman: [
+      {
+        first_name: 'stefan',
+        last_name: 'leigniger',
+        age: 60
+      }
+    ],
+    sportsman: [
       {
         first_name: 'stefan',
         last_name: 'kraft',
         age: 24
       },
-    {
-      first_name: 'vinz',
-      last_name: 'kreichmayer',
-      age: 30
-    }
-  ]
+      {
+        first_name: 'vinz',
+        last_name: 'kreichmayer',
+        age: 30
+      }
+    ]
   };
+  let str = JSON.stringify(json);
+  let json1 = JSON.parse(str);
+  json1.journalist.push({
+    first_name: 'susanne',
+    last_name: 'hoegler',
+    age: 45
+  })
+  console.log(json)
+  $('#msg').html(JSON.stringify(json1))
 </script>
