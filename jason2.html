@@ -20,14 +20,31 @@
 
 </html>
 <script>
-  let json1 = {
-    first_name: 'armin',
-    last_name: 'wolf',
-    age: 60
-  };
+  let json1 = [
+      {
+        first_name: 'armin',
+        last_name: 'wolf',
+        age: 60
+      },
+    {
+      first_name: 'stefan',
+      last_name: 'leigniger',
+      age: 60
+    }
+  ];
+ 
+  let str = JSON.stringify(json1);
+  let json2 = JSON.parse(str);
+  json1.push({
+    first_name: 'susanne',
+      last_name: 'hoegler',
+      age: 45
+  });
+
   console.log(json1)
   console.log('json[1]: ' + json1[1]);
   $("#msg").html('json1[1]= ' + json1[1]);
   $("#msg1").html('json1= ' + json1);
   $("#msg2").html('json1.stringify= ' + JSON.stringify(json1));
+
 </script>
