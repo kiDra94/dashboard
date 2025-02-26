@@ -35,7 +35,7 @@
  
   let str = JSON.stringify(json1);
   let json2 = JSON.parse(str);
-  json1.push({
+  json2.push({
     first_name: 'susanne',
       last_name: 'hoegler',
       age: 45
@@ -44,7 +44,7 @@
   console.log(json1)
   console.log('json[1]: ' + json1[1]);
   $("#msg").html('json1[1]= ' + json1[1]);
-  $("#msg1").html('json1= ' + json1);
-  $("#msg2").html('json1.stringify= ' + JSON.stringify(json1));
+  $("#msg1").html('json1.stringify= ' + JSON.stringify(json1));
+  $("#msg2").html('json2.stringify= ' + JSON.stringify(json2));
 
 </script>
