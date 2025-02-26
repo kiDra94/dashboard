@@ -10,12 +10,14 @@
 </head>
 
 <body>
-  <div id="msg">
-  </div>
-  <div id="msg1">
-  </div>
-  <div id="msg2">
-  </div>
+  <pre>
+    <div id="msg">
+    </div>
+    <div id="msg1">
+    </div>
+    <div id="msg2">
+    </div>
+  </pre>
 </body>
 
 </html>
@@ -52,7 +54,22 @@
     first_name: 'susanne',
     last_name: 'hoegler',
     age: 45
-  })
+  });
   console.log(json)
-  $('#msg').html(JSON.stringify(json1))
+  $('#msg').html(JSON.stringify(json1));
+
+  function getAvgAge(obj, type){
+    let sportsman = obj[type];
+    let age = 0;
+    let counter = 0;
+    for(let i = 0; i < sportsman.length; i++){
+      age += sportsman[i].age;
+      counter++;
+      console.log(age);
+    }
+    return age/counter;
+  }
+
+  let avg = getAvgAge(json1, "sportsman")
+  $("#msg2").html('Die Sportler sind durchschnittlich ' + avg + ' Jahre alt.')
 </script>
