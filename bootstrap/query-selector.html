@@ -8,13 +8,13 @@
 </head>
 
 <body onload="ready()">
-    <p bulme>
+    <p bulme farbe="red">
         this is some text
     </p>
     <p>
         this is some text
     </p>
-    <p bulme>
+    <p bulme farbe="green">
         this is some text
     </p>
     <p>
@@ -25,11 +25,20 @@
 </html>
 <script>
     function ready(){
-        const matches = document.querySelectorAll("p[bulme]"); //nodeList
-        const matchesArray = Array.from(matches); // convert nodeList to Array
+        let matches = document.querySelectorAll("p[bulme]"); //nodeList
+        let matchesArray = Array.from(matches); // convert nodeList to Array
         matchesArray.forEach(element => {
             console.log(element);
             element.setAttribute("style", "color:red")
+        });
+        matches = document.querySelectorAll("p[farbe]"); //nodeList
+        matchesArray = Array.from(matches); // convert nodeList to Array
+        matchesArray.forEach(element => {
+            console.log(element);
+            if(element.hasAttribute("farbe")){
+                let color = element.getAttribute("farbe");
+                element.setAttribute("style", "color:" + color);    
+            }
         });
     }
 </script>
