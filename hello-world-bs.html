@@ -37,7 +37,7 @@
         <p>This is a simple Bootstrap framework with 3 menu items: Home, About, and Contact. Feel free to customize it to suit your needs!</p>
     </div>
 
-    <table class="table">
+    <table id="myTable" class="table d-none">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -78,7 +78,8 @@
 <script>
     $(document).ready(() => { // document (dom) ready
     $("#fetch-menu").click(() => {
-        $("#container").html("<h1>Dynamic Page</h1><p>bla bla bla</p>");
+        $("#container").html("");
+        $("#myTable").removeClass("d-none");
     });
     })
 </script>
