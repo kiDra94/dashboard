@@ -76,25 +76,6 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.24.1/bootstrap-table.min.js"></script>
-
-  <!-- <table id="mytable" class="table d-none">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>      <div id="avgPrice">The avgPrice: </div>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-     </tbody>
-    </table> -->
 </body>
 
 </html>
@@ -119,7 +100,7 @@
     return html;
   }
 
-  function getAvg(priceObj){
+  function getAvg(priceObj) {
     let avgPrice = 0;
     let html = "<tr>";
     html += "<td>Avg Price</td>";
@@ -141,9 +122,9 @@
         console.log(prices);
         let html = printHeader();
         html += "<tbody>";
-          prices.forEach(price => {
-            html += printRows(price);
-          });
+        prices.forEach(price => {
+          html += printRows(price);
+        });
         html += getAvg(prices);
         html += "</tbody>";
         $("#mytable").append(html);
