@@ -108,11 +108,16 @@
     html += "</tr>";
     html += "</thead >";
     html += "<tbody>";
-    return html
+    return html;
   }
 
-  function printRows(rowData) {
-
+  function printRows(priceObj) {
+    let html = "<tr>";
+    html += "<td>" + priceObj.start_timestamp + "</td>";
+    html += "<td>" + priceObj.marketprice + "</td>";
+    html += "<td>" + priceObj.unit + "</td>";
+    html += "</tr >";
+    return html;
   }
 
   $(document).ready(() => { // document (dom) ready!
