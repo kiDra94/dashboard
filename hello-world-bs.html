@@ -38,13 +38,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a id="fetch-menu" class="nav-link active" href="#">Fetch</a>
+            <a id="fetch" class="nav-link active" href="#">Fetch</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a id="about" class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a id="contact" class="nav-link" href="#">Contact</a>
           </li>
         </ul>
       </div>
@@ -130,6 +130,6 @@
   }
 
   $(document).ready(() => { // document (dom) ready!
-    $("#fetch-menu").click(setConntent("pricetable"));
+    $("#fetch").click(setConntent("pricetable"));
   });
 </script>
