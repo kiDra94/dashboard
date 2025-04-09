@@ -38,13 +38,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a id="fetch-link" class="nav-link" href="#">Fetch</a>
+            <a id="fetch-link" link class="nav-link" href="#">Fetch</a>
           </li>
           <li class="nav-item">
-            <a id="about-link" class="nav-link" href="#">About</a>
+            <a id="about-link" link class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
-            <a id="contact-link" class="nav-link" href="#">Contact</a>
+            <a id="contact-link" link class="nav-link" href="#">Contact</a>
           </li>
         </ul>
       </div>
@@ -55,17 +55,17 @@
   <div class="container mt-2">
 
     <!-- Section 1 -->
-    <div id="fetch-content" class="content">
+    <div id="fetch-content" content class="content">
       <h5>My dynamic table</h5>
       <table id="mytable" class="table w-50"></table>
     </div>
     <!-- Section 2 -->
-    <div id="about-content" class="content d-none">
+    <div id="about-content" content class="content d-none">
       <h5>About</h5>
       <p>This is the content of section 2.</p>
     </div>
     <!-- Section 3 -->
-    <div id="contact-content" class="content d-none">
+    <div id="contact-content" content class="content d-none">
       <h5>Contact</h5>
       <p>This is the content of section 3.</p>
     </div>
@@ -114,6 +114,9 @@
   }
 
   function setContent(content) {
+    let contents = document.querySelectorAll("[content]");
+    let links = document.querySelectorAll();
+
     if (content == "fetch-link") {
       $("#fetch-link").addClass("active");
       $("#about-link").removeClass("active");
