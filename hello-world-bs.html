@@ -122,7 +122,13 @@
       ele.classList.add("d-none");
     }
 
-    $("#"+id+"-content").removeClass("d-none");
+    for (let i = 0; i < links.length; i++) {
+      let ele = links[i];
+      ele.classList.remove("active");
+    }
+
+    $("#" + id + "-content").removeClass("d-none");
+    $("#" + id + "-link").addClass("active");
 
     if (id == "fetch") {
       writeTable();
