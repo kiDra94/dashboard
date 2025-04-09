@@ -113,22 +113,23 @@
     return html;
   }
 
-  $(document).ready(() => { // document (dom) ready!
-    $("#fetch-menu").click(() => {
-
-      let url = "https://api.awattar.at/v1/marketdata"
-      $.get(url).then((res) => {
-        let prices = res.data;
-        console.log(prices);
-        let html = printHeader();
-        html += "<tbody>";
-        prices.forEach(price => {
-          html += printRows(price);
-        });
-        html += getAvg(prices);
-        html += "</tbody>";
-        $("#mytable").append(html);
+  function setConntent(name) {
+    let url = "https://api.awattar.at/v1/marketdata"
+    $.get(url).then((res) => {
+      let prices = res.data;
+      console.log(prices);
+      let html = printHeader();
+      html += "<tbody>";
+      prices.forEach(price => {
+        html += printRows(price);
       });
+      html += getAvg(prices);
+      html += "</tbody>";
+      $("#mytable").append(html);
     });
-  })
+  }
+
+  $(document).ready(() => { // document (dom) ready!
+    $("#fetch-menu").click(setConntent("pricetable"));
+  });
 </script>
