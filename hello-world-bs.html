@@ -102,13 +102,18 @@
   function printHeader() {
     let html = "<thead>";
     html += "<tr>";
-    html += "<th scope='col'>#</th>";
-    html += "<th scope='col'>msg</th>";
+    html += "<th scope='col'>Time</th>";
+    html += "<th scope='col'>Price</th>";
+    html += "<th scope='col'>Unit</th>";
     html += "</tr>";
     html += "</thead >";
     html += "<tbody>";
     return html
-  };
+  }
+
+  function printRows(rowData) {
+
+  }
 
   $(document).ready(() => { // document (dom) ready!
     $("#fetch-menu").click(() => {
