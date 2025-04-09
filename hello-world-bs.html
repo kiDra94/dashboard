@@ -38,13 +38,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a id="fetch" class="nav-link" href="#">Fetch</a>
+            <a id="fetch-link" class="nav-link" href="#">Fetch</a>
           </li>
           <li class="nav-item">
-            <a id="about" class="nav-link" href="#">About</a>
+            <a id="about-link" class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
-            <a id="contact" class="nav-link" href="#">Contact</a>
+            <a id="contact-link" class="nav-link" href="#">Contact</a>
           </li>
         </ul>
       </div>
@@ -55,17 +55,17 @@
   <div class="container mt-2">
 
     <!-- Section 1 -->
-    <div id="content-1" class="content">
+    <div id="fetch-content" class="content">
       <h5>My dynamic table</h5>
       <table id="mytable" class="table w-50"></table>
     </div>
     <!-- Section 2 -->
-    <div id="content-2" class="content d-none">
+    <div id="about-content" class="content d-none">
       <h5>About</h5>
       <p>This is the content of section 2.</p>
     </div>
     <!-- Section 3 -->
-    <div id="content-3" class="content d-none">
+    <div id="contact-content" class="content d-none">
       <h5>Contact</h5>
       <p>This is the content of section 3.</p>
     </div>
@@ -114,17 +114,17 @@
   }
 
   function setContent(content) {
-    if (content == "fetch") {
-      $("#fetch").addClass("active");
-      $("#about").removeClass("active");
-      $("#content-1").removeClass("d-none");
-      $("#content-2").addClass("d-none");
+    if (content == "fetch-link") {
+      $("#fetch-link").addClass("active");
+      $("#about-link").removeClass("active");
+      $("#fetch-content").removeClass("d-none");
+      $("#about-content").addClass("d-none");
       writeTable();
     } else if (content == "about") {
-      $("#about").addClass("active");
-      $("#fetch").removeClass("active");
-      $("#content-1").addClass("d-none");
-      $("#content-2").removeClass("d-none");
+      $("#about-link").addClass("active");
+      $("#fetch-link").removeClass("active");
+      $("#fetch-content").addClass("d-none");
+      $("#about-content").removeClass("d-none");
     }
 
   }
