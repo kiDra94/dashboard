@@ -101,7 +101,12 @@
 <script>
   $(document).ready(() => { // document (dom) ready!
     $("#fetch-menu").click(() => {
-
+      
+      let url = "https://api.awattar.at/v1/marketdata"
+      $.get(url).then((res) => {
+        let prices = res.data;
+        console.log(prices);
+      });
       let html = "<thead>";
       html += "<tr>";
       html += "<th scope='col'>#</th>";
