@@ -107,13 +107,12 @@
     html += "<th scope='col'>Unit</th>";
     html += "</tr>";
     html += "</thead >";
-    html += "<tbody>";
     return html;
   }
 
   function printRows(priceObj) {
     let html = "<tr>";
-    html += "<td>" + priceObj.start_timestamp + "</td>";
+    html += "<td>" + new Date(priceObj.start_timestamp).toLocaleTimeString() + "</td>";
     html += "<td>" + priceObj.marketprice + "</td>";
     html += "<td>" + priceObj.unit + "</td>";
     html += "</tr >";
@@ -127,17 +126,14 @@
       $.get(url).then((res) => {
         let prices = res.data;
         console.log(prices);
+        let html = printHeader();
+        html += "<tbody>";
+          prices.forEach(price => {
+            html += printRows(price);
+          });
+        html += "</tbody>";
+        $("#mytable").append(html);
       });
-
-      for (let i = 0; i < 10; i++) {
-        html += "<tr>";
-        html += "<td>" + i + "</td>";
-        html += "<td>this is line #" + i + "</td>";
-        html += "</tr >";
-      }
-      html += "</tbody>";
-      $("#mytable").append(html);
-
     });
   })
 </script>
