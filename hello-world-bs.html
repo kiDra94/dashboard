@@ -114,11 +114,11 @@
   }
 
   function setContent(content) {
-    if(content == "fetch"){
+    if (content == "fetch") {
       $("#content-1").removeClass("d-none");
       $("#content-2").addClass("d-none");
       writeTable();
-    } else if(content == "about"){
+    } else if (content == "about") {
       $("#content-1").addClass("d-none");
       $("#content-2").removeClass("d-none");
     }
@@ -142,7 +142,8 @@
   }
 
   $(document).ready(() => { // document (dom) ready!
-    $("#fetch").click(setContent);
-    $("#about").click(setContent);
+    setContent("fetch");
+    $("#fetch").click(() => { setContent("fetch") });
+    $("#about").click(() => { setContent("about") });
   });
 </script>
