@@ -138,6 +138,7 @@
   }
 
   function writeTable(name) {
+    $("#mytable").empty();
     let url = "https://api.awattar.at/v1/marketdata"
     $.get(url).then((res) => {
       let prices = res.data;
