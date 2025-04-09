@@ -117,17 +117,16 @@
     let contents = document.querySelectorAll("[AKIFTcontent]");
     let links = document.querySelectorAll("[link]");
 
+    for (let i = 0; i < contents.length; i++) {
+      let ele = contents[i];
+      ele.classList.add("d-none");
+    }
+
     if (content == "fetch-link") {
-      $("#fetch-link").addClass("active");
-      $("#about-link").removeClass("active");
-      $("#fetch-content").removeClass("d-none");
-      $("#about-content").addClass("d-none");
+      $("#fetch-link").removeClass("d-none");
       writeTable();
     } else if (content == "about") {
-      $("#about-link").addClass("active");
-      $("#fetch-link").removeClass("active");
-      $("#fetch-content").addClass("d-none");
-      $("#about-content").removeClass("d-none");
+      $("#about-link").removeClass("d-none");
     }
 
   }
