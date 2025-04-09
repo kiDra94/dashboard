@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="ready()">
+    <p bulme hide farbe="blue">the forth one</p>
+    <p bulme hide farbe="blue">the forth one</p>
+    <p bulme hide farbe="blue">the forth one</p>
+    <p bulme farbe="red">the first one - show hidden object!</p>
+    <p>the second one</p>
+    <p bulme farbe="green">the third one</p>
+    <p bulme hide farbe="blue">the forth one</p>
+
+</body>
+
+</html>
+
+<script>
+    function ready() {
+        let _matches = document.querySelectorAll("p[farbe]"); // nodelist
+        let matches = Array.from(_matches); // convert nodelist to array
+        matches.forEach(element => {
+            console.log(element);
+            if (element.hasAttribute("farbe"))
+                element.setAttribute("style", "color:red")
+        })
+        _matches = document.querySelectorAll("p[farbe]"); // nodeList
+        matches = Array.from(_matches); // convert nodeList to array
+        matches.forEach(element => {
+            console.log(element);
+            // if (element.hasAttribute("farbe")) {   // eigentlich unnötig, weil oben schon gefiltert mit querySelector
+            let color = element.getAttribute("farbe");
+            element.setAttribute("style", "color:" + color);
+            element.addEventListener("click", (e) => {
+                console.log("you clicked me!")
+                _hidden_elements = document.querySelectorAll("[hide]");
+                hidden_elements = Array.from(_hidden_elements);
+                hidden_elements.forEach(element => {
+                    //element.removeAttribute("[hide]");
+                    element.style.display = element.style.display == "none" ? "block" : "none";
+                    // if (element.style.display == "block") {
+                    //     element.style.display = "none";
+                    // }
+                    // else {
+                    //     element.style.display = "block";
+                    //     element.style.color = "yellow";
+                    // }
+                })
+            })
+
+            //  }
+        });
+        _matches = document.querySelectorAll("p[hide]"); // nodeList
+        matches = Array.from(_matches); // convert nodeList to array
+        matches.forEach(element => {
+            console.log(element);
+            element.style.display = "none";
+        }
+        );
+    }
+
+
+</script>

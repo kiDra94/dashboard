@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="ready()">
+   <p>some text</p>
+   <p>some text</p>
+   <p>some text</p>
+   <p>some text</p>
+   <p hide="akift">some text - click me to hide 2akift</p>
+   <p>some text</p>
+   <p akift>some text</p>
+   <p akift>some text</p>
+   <p akift>some text</p>
+   <p>some text</p>
+   <p>some text</p>
+
+
+</body>
+
+</html>
+
+<script>
+    
+        _matches = document.querySelectorAll("p[hide]"); // nodeList
+        matches = Array.from(_matches); // convert nodeList to array
+        matches.forEach(element => {
+            element.addEventListener("click", (e)=>{
+                _matches = document.querySelectorAll("p[akift]");
+                matches = Array.from(_matches);
+                matches.forEach(element => {
+                    element.hidden = true;
+                });
+            });
+        }
+        );
+    
+
+
+</script>

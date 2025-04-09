@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <p id="myP">some random text</p>
+    <button id="myButton">click me</button>
+</body>
+
+<script>
+
+    $(document).ready(()=>{
+        document.getElementById("myP").innerHTML = "bla bla bla bla";
+        $("#myButton").click(()=>{
+            $("#myP").html($("#myP").html() + " bla");
+        })
+    } 
+)// browser reports that dom is ready
+
+</script>
+
+</html>
