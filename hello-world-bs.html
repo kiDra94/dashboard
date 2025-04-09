@@ -83,7 +83,7 @@
                 <th scope="col">#</th>
                 <th scope="col">First</th>
                 <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Handle</th>      <div id="avgPrice">The avgPrice: </div>
             </tr>
         </thead>
         <tbody>
@@ -119,6 +119,19 @@
     return html;
   }
 
+  function getAvg(priceObj){
+    let avgPrice = 0;
+    let html = "<tr>";
+    html += "<td>Avg Price</td>";
+    priceObj.forEach(price => {
+      avgPrice += price.marketprice;
+    })
+    html += "<td>" + avgPrice / priceObj.length + "</td>";
+    html += "<td>" + priceObj[0].unit + "</td>";
+    html += "</tr >";
+    return html;
+  }
+
   $(document).ready(() => { // document (dom) ready!
     $("#fetch-menu").click(() => {
 
@@ -131,6 +144,7 @@
           prices.forEach(price => {
             html += printRows(price);
           });
+        html += getAvg(prices);
         html += "</tbody>";
         $("#mytable").append(html);
       });
