@@ -113,7 +113,7 @@
     return html;
   }
 
-  function setContent(content) {
+  function setContent(id) {
     let contents = document.querySelectorAll("[AKIFTcontent]");
     let links = document.querySelectorAll("[link]");
 
@@ -122,11 +122,11 @@
       ele.classList.add("d-none");
     }
 
-    if (content == "fetch-link") {
-      $("#fetch-link").removeClass("d-none");
+    $("#"+id+"-content").removeClass("d-none");
+
+    if (id == "fetch-link") {
       writeTable();
-    } else if (content == "about") {
-      $("#about-link").removeClass("d-none");
+    } else if (id == "about") {
     }
 
   }
@@ -149,7 +149,7 @@
 
   $(document).ready(() => { // document (dom) ready!
     setContent("fetch");
-    $("#fetch").click(() => { setContent("fetch") });
-    $("#about").click(() => { setContent("about") });
+    $("#fetch-link").click(() => { setContent("fetch") });
+    $("#about-link").click(() => { setContent("about") });
   });
 </script>
