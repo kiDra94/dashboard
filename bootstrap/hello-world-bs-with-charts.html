@@ -127,16 +127,16 @@
             let currentTime = Date.now(); // in ms
             let startTime = currentTime - 3600 * 24 * 1000;
             myData.series = []; // neues Array für chart-linie
-            let chartline = {};
-            chartline.name = "sinus";
-            chartline.fillOpacity = 0.1;
+            let chartlineSin = {};
+            chartlineSin.name = "sinus";
+            chartlineSin.fillOpacity = 0.1;
             let data = []; // array of points
-            chartline.data = data;
+            chartlineSin.data = data;
             
-            let chartline2 = {};
-            chartline2.name = "cosinus";
-            chartline2.fillOpacity = 0.1;
-            chartline2.data = [];
+            let chartlineCos = {};
+            chartlineCos.name = "cosinus";
+            chartlineCos.fillOpacity = 0.1;
+            chartlineCos.data = [];
 
             for (let i = 0; i < 60 * 24; i++) {
                 let tx = startTime + i * 1000 * 60 / 3.6E6;
@@ -145,11 +145,11 @@
                 p[1] = Math.sin(tx);
                 data.push(p);
 
-                chartline2.data.push([tx,Math.cos(tx)]);
+                chartlineCos.data.push([tx,Math.cos(tx)]);
             }
-            // myData.series[0] = chartline;
-            myData.series.push(chartline);
-            myData.series.push(chartline2);
+            // myData.series[0] = chartlineSin;
+            myData.series.push(chartlineSin);
+            myData.series.push(chartlineCos);
 
             Highcharts.chart("mychart", myData);
             writeTable();
