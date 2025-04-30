@@ -169,46 +169,9 @@
                 Highcharts.chart("mychart", myData);
                 writeTable();
             });
-
-            //     // daten erzeugen
-            //     let currentTime = Date.now(); // in ms
-            //     let startTime = currentTime - 3600 * 24 * 1000;
-            //     myData.series = []; // neues Array für chart-linie
-            //     let chartline = {};
-            //     chartline.name = "sinus";
-            //     chartline.fillOpacity = 0.1;
-            //     let data = []; // array of points
-            //     chartline.data = data;
-
-            //     let chartline2 = {};
-            //     chartline2.name = "cosinus";
-            //     chartline2.fillOpacity = 0.1;
-            //     chartline2.data = [];
-
-            //     for (let i = 0; i < 60 * 24; i++) {
-            //         let tx = startTime + i * 1000 * 60 / 3.6E6;
-            //         let p = []; // neuen punkt erzeugen
-            //         p[0] = tx;
-            //         p[1] = Math.sin(tx);
-            //         data.push(p);
-
-            //         chartline2.data.push([tx, Math.cos(tx)]);
-            //     }
-            //     // myData.series[0] = chartline;
-            //     myData.series.push(chartline);
-            //     myData.series.push(chartline2);
-
-            //     Highcharts.chart("mychart", myData);
-            //     writeTable();
-            // }
-            // else if (id == 'about') {
-
         }
 
     }
-
-    // const response = $.get("https://api.awattar.at/v1/marketdata");
-    // console.log(response);
 
     function writeTable() {
         let url = "https://api.awattar.at/v1/marketdata";
@@ -256,14 +219,6 @@
                 text: 'Preis (€/MWh)'
             }
         },
-        // series: [{
-        //     name: 'Tokyo',
-        //     data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-        // }, {
-        //     name: 'New York',
-        //     data: [0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-        // }]
-        // series: []
         navigator: {
             enabled: true, // Enable the navigator
             series: {
