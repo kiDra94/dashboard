@@ -25,7 +25,7 @@
             const name = sessionStorage.getItem('username');
             const output = document.getElementById('output');
             if (name) {
-               Content = `Stored name: ${name}`;
+               output.textContent = `Stored name: ${name}`;
             } else {
                 output.textContent = 'No name found in session storage.';
             }
