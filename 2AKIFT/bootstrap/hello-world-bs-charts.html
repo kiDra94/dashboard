@@ -123,39 +123,43 @@
 
 
         if (id == "fetch") {
+            $.get(url).then((resp) => {
 
-        //     // daten erzeugen
-        //     let currentTime = Date.now(); // in ms
-        //     let startTime = currentTime - 3600 * 24 * 1000;
-        //     myData.series = []; // neues Array für chart-linie
-        //     let chartline = {};
-        //     chartline.name = "sinus";
-        //     chartline.fillOpacity = 0.1;
-        //     let data = []; // array of points
-        //     chartline.data = data;
+                let prices = resp.data;
+            });
 
-        //     let chartline2 = {};
-        //     chartline2.name = "cosinus";
-        //     chartline2.fillOpacity = 0.1;
-        //     chartline2.data = [];
+            //     // daten erzeugen
+            //     let currentTime = Date.now(); // in ms
+            //     let startTime = currentTime - 3600 * 24 * 1000;
+            //     myData.series = []; // neues Array für chart-linie
+            //     let chartline = {};
+            //     chartline.name = "sinus";
+            //     chartline.fillOpacity = 0.1;
+            //     let data = []; // array of points
+            //     chartline.data = data;
 
-        //     for (let i = 0; i < 60 * 24; i++) {
-        //         let tx = startTime + i * 1000 * 60 / 3.6E6;
-        //         let p = []; // neuen punkt erzeugen
-        //         p[0] = tx;
-        //         p[1] = Math.sin(tx);
-        //         data.push(p);
+            //     let chartline2 = {};
+            //     chartline2.name = "cosinus";
+            //     chartline2.fillOpacity = 0.1;
+            //     chartline2.data = [];
 
-        //         chartline2.data.push([tx, Math.cos(tx)]);
-        //     }
-        //     // myData.series[0] = chartline;
-        //     myData.series.push(chartline);
-        //     myData.series.push(chartline2);
+            //     for (let i = 0; i < 60 * 24; i++) {
+            //         let tx = startTime + i * 1000 * 60 / 3.6E6;
+            //         let p = []; // neuen punkt erzeugen
+            //         p[0] = tx;
+            //         p[1] = Math.sin(tx);
+            //         data.push(p);
 
-        //     Highcharts.chart("mychart", myData);
-        //     writeTable();
-        // }
-        // else if (id == 'about') {
+            //         chartline2.data.push([tx, Math.cos(tx)]);
+            //     }
+            //     // myData.series[0] = chartline;
+            //     myData.series.push(chartline);
+            //     myData.series.push(chartline2);
+
+            //     Highcharts.chart("mychart", myData);
+            //     writeTable();
+            // }
+            // else if (id == 'about') {
 
         }
 
