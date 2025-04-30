@@ -127,7 +127,25 @@
             $.get(url).then((resp) => {
 
                 let prices = resp.data;
-                console.log(prices);
+                console.log(myData);
+                myData["series"] = []; // erzeugt einen neue property
+                console.log(myData);
+                let chartline = {};
+                chartline["name"] = "EPEX-Spot-Preice"; // erzeugt eine NEUSES property name in chartline
+                let dataPoints = [];
+                chartline["data"] = dataPoints;
+                chartline.fillOpacity = 0.1;
+
+                for (let i = 0; i < prices.length; i++){
+                    let price = prices[i];
+                    let p = [];
+                    p[0] = price.start_timestamp; // [x-Wert] Zeitachse
+                    p[1] = price.marketprice; // [y-Wert] Preis
+                    dataPoints.push(p);
+                }
+                myData.series.push(chartline);
+                Highcharts.chart("mychart", myData);
+                writeTable();
             });
 
             //     // daten erzeugen
