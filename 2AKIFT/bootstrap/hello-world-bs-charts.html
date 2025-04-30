@@ -136,13 +136,13 @@
                 chartline["data"] = dataPoints;
                 chartline.fillOpacity = 0.1;
 
-                for (let i = 0; i < prices.length; i++){
-                    let price = prices[i];
+                prices.forEach((price) => {
                     let p = [];
-                    p[0] = price.start_timestamp; // [x-Wert] Zeitachse
-                    p[1] = price.marketprice; // [y-Wert] Preis
-                    dataPoints.push(p);
+                    // p[0] = price.start_timestamp; // [x-Wert] Zeitachse
+                    // p[1] = price.marketprice; // [y-Wert] Preis
+                    dataPoints.push([price.start_timestamp, price.marketprice]);
                 }
+                );
                 myData.series.push(chartline);
                 Highcharts.chart("mychart", myData);
                 writeTable();
