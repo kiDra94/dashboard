@@ -79,6 +79,7 @@
                     <span class="input-group-text">Bis</span>
                     <input type="date" class="form-control" id="to" value="2025-01-01">
                 </div>
+                <button id="redraw">Fetch</button>
             </div>
 
             <!-- <input id="from" type="datetime-local" value="2024-01-01T09:00">
@@ -192,9 +193,13 @@
         console.log("Achtung: dieser Code steht ach dem $.get wird aber vor .then ausgefuert")
     }
     $(document).ready(() => { // document (dom) ready!
-        setContent("fetch");
+        // setContent("fetch");
         $("#fetch-link").click(() => { setContent('fetch') });//registering
         $("#about-link").click(() => { setContent('about') });
+        $("#redraw").click(() => {
+            setContent("fetch");
+        }
+        )
 
     });
 
