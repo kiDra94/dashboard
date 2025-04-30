@@ -99,7 +99,7 @@ let myData = {
         text: 'Strompreise von EPEX-Spot'
     },
     subtitle: {
-        text: 'we are still noobs'
+        text: 'we are now better'
     },
     xAxis: {
         type: 'datetime' // In ms [epochalzeot]
