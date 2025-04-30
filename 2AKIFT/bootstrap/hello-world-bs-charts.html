@@ -124,40 +124,40 @@
 
         if (id == "fetch") {
 
-            // daten erzeugen
-            let currentTime = Date.now(); // in ms
-            let startTime = currentTime - 3600 * 24 * 1000;
-            myData.series = []; // neues Array für chart-linie
-            let chartline = {};
-            chartline.name = "sinus";
-            chartline.fillOpacity = 0.1;
-            let data = []; // array of points
-            chartline.data = data;
+        //     // daten erzeugen
+        //     let currentTime = Date.now(); // in ms
+        //     let startTime = currentTime - 3600 * 24 * 1000;
+        //     myData.series = []; // neues Array für chart-linie
+        //     let chartline = {};
+        //     chartline.name = "sinus";
+        //     chartline.fillOpacity = 0.1;
+        //     let data = []; // array of points
+        //     chartline.data = data;
 
-            let chartline2 = {};
-            chartline2.name = "cosinus";
-            chartline2.fillOpacity = 0.1;
-            chartline2.data = [];
+        //     let chartline2 = {};
+        //     chartline2.name = "cosinus";
+        //     chartline2.fillOpacity = 0.1;
+        //     chartline2.data = [];
 
-            for (let i = 0; i < 60 * 24; i++) {
-                let tx = startTime + i * 1000 * 60 / 3.6E6;
-                let p = []; // neuen punkt erzeugen
-                p[0] = tx;
-                p[1] = Math.sin(tx);
-                data.push(p);
+        //     for (let i = 0; i < 60 * 24; i++) {
+        //         let tx = startTime + i * 1000 * 60 / 3.6E6;
+        //         let p = []; // neuen punkt erzeugen
+        //         p[0] = tx;
+        //         p[1] = Math.sin(tx);
+        //         data.push(p);
 
-                chartline2.data.push([tx, Math.cos(tx)]);
-            }
-            // myData.series[0] = chartline;
-            myData.series.push(chartline);
-            myData.series.push(chartline2);
+        //         chartline2.data.push([tx, Math.cos(tx)]);
+        //     }
+        //     // myData.series[0] = chartline;
+        //     myData.series.push(chartline);
+        //     myData.series.push(chartline2);
 
-            Highcharts.chart("mychart", myData);
-            writeTable();
-        }
-        else if (id == 'about') {
+        //     Highcharts.chart("mychart", myData);
+        //     writeTable();
+        // }
+        // else if (id == 'about') {
 
-        }
+        // }
 
     }
 
@@ -200,7 +200,7 @@
             text: 'we are still noobs'
         },
         xAxis: {
-            type: 'datetime'
+            type: 'datetime' // In ms [epochalzeot]
         },
         yAxis: {
             title: {
