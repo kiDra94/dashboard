@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage Example</title>
+</head>
+<body>
+    <h1>Session Storage Example</h1>
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" />
+    <button onclick="saveName()">Save Name</button>
+    <button onclick="showName()">Show Name</button>
+    <button onclick="clearName()">Clear Name</button>
+    <p id="output"></p>
+
+    <script>
+        function saveName() {
+            const name = document.getElementById('name').value;
+            sessionStorage.setItem('username', name);
+            alert('Name saved!');
+        }
+
+        function showName() {
+            const name = sessionStorage.getItem('username');
+            const output = document.getElementById('output');
+            if (name) {
+               Content = `Stored name: ${name}`;
+            } else {
+                output.textContent = 'No name found in session storage.';
+            }
+        }
+
+        function clearName() {
+            sessionStorage.removeItem('username');
+            alert('Name cleared!');
+        }
+
+        sessionStorage.setItem("class", "2AKIFT") // always in the session
+    </script>
+</body>
+</html>
