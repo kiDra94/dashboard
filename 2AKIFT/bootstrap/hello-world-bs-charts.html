@@ -123,9 +123,11 @@
 
 
         if (id == "fetch") {
+            let url = "https://api.awattar.at/v1/marketdata";
             $.get(url).then((resp) => {
 
                 let prices = resp.data;
+                console.log(prices);
             });
 
             //     // daten erzeugen
