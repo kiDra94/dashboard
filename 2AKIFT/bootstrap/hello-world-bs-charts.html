@@ -125,7 +125,9 @@
 
 
         if (id == "fetch") {
-            let url = "https://api.awattar.at/v1/marketdata";
+            let url = "https://api.awattar.at/v1/marketdata?";
+            url += "start=" + $("#from").val(); //$("#[name]") -> id
+            url += "&end=" + $("#to").val();
             $.get(url).then((resp) => {
 
                 let prices = resp.data;
@@ -216,7 +218,10 @@
 
     let myData = {
         chart: {
-            type: 'area'
+            type: 'area',
+            zooming: {
+                type: "x"
+            }
         },
         title: {
             text: 'Strompreise von EPEX-Spot'
