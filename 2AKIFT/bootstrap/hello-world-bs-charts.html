@@ -27,6 +27,11 @@
             border-radius: 5px;
             background-color: #f9f9f9;
         } */
+
+        .form-control,
+        .input-group-text {
+            border-radius: 0;
+        }
     </style>
 </head>
 
@@ -63,8 +68,22 @@
         <!-- Section 1 -->
         <div id="fetch-content" class="content">
             <h5>My dynamic table</h5>
-            <input id="from" type="datetime-local" value="2024-01-01T09:00">
-            <input id="to" type="datetime-local" value="2025-01-01T09:00"> 
+
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with date inputs">
+
+                <div class="btn-group" role="group" aria-label="First group">
+                    <span class="input-group-text">Von</span>
+                    <input type="date" class="form-control" id="from" value="2024-01-01">
+                </div>
+                <div class="btn-group ms-3" role="group" aria-label="Second group">
+                    <span class="input-group-text">Bis</span>
+                    <input type="date" class="form-control" id="to" value="2025-01-01">
+                </div>
+            </div>
+
+            <!-- <input id="from" type="datetime-local" value="2024-01-01T09:00">
+            <input id="to" type="datetime-local" value="2025-01-01T09:00">  -->
+
             <div id="mychart">
                 <p class="border p-2 rounded">hier wird später ein chart gerendert ...</p>
             </div>
