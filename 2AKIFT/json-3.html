@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON-2</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <pre>
+    <div id="msg"></div>
+    <div id="msg1"></div>
+    <div id="msg2"></div>
+</pre>
+
+</body>
+
+</html>
+<script>
+    let json = {
+        journalists: [ // array of objects
+            {
+                firstname: "armin",
+                lastname: "wolf",
+                age: 60
+            },
+            {
+                firstname: "stefan",
+                lastname: "lenglinger",
+                age: 30
+            }
+        ],
+        sportsmen: [
+            {
+                firstname: "stefan",
+                lastname: "kraft",
+                age: 24
+            },
+            {
+                firstname: "vinz",
+                lastname: "kriechmayer",
+                age: 30
+            },
+
+        ]
+
+
+    };
+
+    console.log(json);
+    $("#msg").html(JSON.stringify(json));
+
+    let str = JSON.stringify(json);
+    let json1 = JSON.parse(str); // create an object from a string, which e.g. has beeing received from the internet
+    json1.journalists.push({ // add something to this object ..
+        firstname: "susanne",
+        lastname: "högerl",
+        age: 45
+    });
+    console.log(json1);
+    $("#msg1").html(JSON.stringify(json1));
+    // $("#msg2").html(json1);
+
+    function getAvgAge(obj, type) {
+        // to do ...
+        return 30.074;
+    }
+    let avg = getAvgAge(json1, "sportsmen");
+    $("#msg2").html("die Sportler sind durchschnittlich " + avg.toFixed(2) + " Jahre alt!");
+
+
+</script>
