@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON-2</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="msg"></div>
+    <div id="msg1"></div>
+    <div id="msg2"></div>
+
+
+</body>
+
+</html>
+<script>
+    let json = [ // array of objects
+        {
+            firstname: "armin",
+            lastname: "wolf",
+            age: 60
+        },
+        {
+            firstname: "stefan",
+            lastname: "lenglinger",
+            age: 30
+        }
+
+
+    ];
+
+    console.log(json);
+    $("#msg").html(JSON.stringify(json));
+
+    let str = JSON.stringify(json);
+    let json1 = JSON.parse(str);
+    json1.push({
+        firstname: "susanne",
+        lastname:"högerl",
+        age: 45
+    });
+    console.log(json1);
+    $("#msg1").html(JSON.stringify(json1));
+ 
+
+</script>

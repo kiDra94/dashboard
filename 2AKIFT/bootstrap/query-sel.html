@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="ready()">
+    <p bulme hide farbe="blue">this is some text</p>
+    <p bulme hide farbe="blue">this is some text</p>
+    <p bulme hide farbe="blue">this is some text</p>
+
+    <p>this is some text</p>
+    <p bulme farbe=" red">show the hidden elements</p>
+    <p>this is some text</p>
+    <p>this is some text</p>
+    <p bulme farbe="green">this is some text</p>
+    <p bulme hide farbe="blue">this is some text</p>
+
+</body>
+
+</html>
+<script>
+    function ready() {
+        let _matches = document.querySelectorAll(" p[bulme]"); // nodeList let matches=Array.from(_matches); // convert
+        let matches = Array.from(_matches); // convert nodeList to array
+        matches.forEach(element => {
+
+            console.log(element);
+            element.setAttribute("style", "color:red;");
+        });
+        _matches = document.querySelectorAll("p[farbe]"); // nodeList
+        matches = Array.from(_matches); // convert nodeList to array
+        matches.forEach(element => {
+            console.log(element);
+            let color = element.getAttribute("farbe");
+            element.setAttribute("style", "color:" + color);
+            element.addEventListener("click", (e) => {
+                console.log("you clicked me ...");
+                let _matches = document.querySelectorAll("p[hide]");
+                let matches = Array.from(_matches); // convert nodeList to array
+                matches.forEach(element => {
+                    element.style.display = "block";
+                    // element.removeAttribute("hide");
+
+                });
+            });
+            _matches = document.querySelectorAll("p[hide]"); // nodeList
+            matches = Array.from(_matches); // convert nodeList to array
+            matches.forEach(element => {
+                element.style.display = "none";
+            });
+
+
+        });
+    }
+</script>
