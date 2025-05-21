@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Working with promises</h1>
+    <button id="start-then">start "then"</button>
+    <p id="msg"></p>
+</body>
+
+</html>
+
+<script>
+    let myData="blabla";
+    $(document).ready(() => {
+
+        $("#start-then").click(() => { // then seriel
+            // so werden die daten irgendwan überschrieben
+            addToMsg("lets go with then!");
+            wait(1000)
+                .then((resp) => { myData="changed"; addToMsg(resp); return wait(500); })
+                .then((resp) => { addToMsg(resp); return wait(-500); })
+                .then((resp) => { addToMsg(resp); addToMsg("ready now ciao!"); })
+                .catch((e) => {addToMsg("something went wrog"); addToMsg(e)});
+        
+            addToMsg("this msg after everhing is done");
+            addToMsg(myData);
+
+
+        });
+
+    });
+    function addToMsg(msg) {
+        let current = $("#msg").html();
+        $("#msg").html(current + "<br>" + msg);
+
+    }
+    function wait(ms) {
+        let promise = new Promise((resolve, reject) => {
+            if (ms < 0) {
+                reject("Invalid wait time:" + ms + "ms cannot be negative.");
+                return;
+            }
+
+            setTimeout(() => {
+                resolve("ok: waited " + ms + " ms");
+            }, ms);
+        });
+        return promise;
+    }
+</script>
